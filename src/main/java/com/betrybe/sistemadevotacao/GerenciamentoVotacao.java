@@ -11,10 +11,13 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   private final ArrayList<PessoaEleitora> pessoasEleitoras;
   private final ArrayList<String> cpfsComputados;
 
+  /**
+   * Instantiates a new Gerenciamento votacao.
+   */
   public GerenciamentoVotacao() {
-    this.pessoasCandidatas = new ArrayList<PessoaCandidata>();
-    this.pessoasEleitoras = new ArrayList<PessoaEleitora>();
-    this.cpfsComputados = new ArrayList<String>();
+    this.pessoasCandidatas = new ArrayList<>();
+    this.pessoasEleitoras = new ArrayList<>();
+    this.cpfsComputados = new ArrayList<>();
   }
 
   @Override
@@ -62,6 +65,20 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   @Override
   public void mostrarResultado() {
+    if (this.cpfsComputados.isEmpty()) {
+      System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
+    } else {
+      String stringResult = "";
 
+      for (PessoaCandidata pessoaCandidata : this.pessoasCandidatas) {
+        int percentage = pessoaCandidata.getVotos() / this.cpfsComputados.size() * 100;
+        stringResult +=
+            "Nome: " + pessoaCandidata.getNome() + " - " + pessoaCandidata.getVotos() + " votos ( "
+                + Math.round(percentage) + "% )";
+      }
+
+      stringResult += "Total de votos: " + this.cpfsComputados.size();
+      System.out.println(stringResult);
+    }
   }
 }
