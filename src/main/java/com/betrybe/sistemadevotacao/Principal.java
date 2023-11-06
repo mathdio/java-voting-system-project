@@ -13,8 +13,8 @@ public class Principal {
   public static void main(String[] args) {
     GerenciamentoVotacao votingManagement = new GerenciamentoVotacao();
     Scanner scanner = new Scanner(System.in);
-    byte firstStage;
 
+    byte firstStage;
     do {
       System.out.println("""
           Cadastrar pessoa candidata?
@@ -34,7 +34,6 @@ public class Principal {
     } while (firstStage == 1);
 
     byte secondStage;
-
     do {
       System.out.println("""
           Cadastrar pessoa eleitora?
@@ -52,6 +51,22 @@ public class Principal {
         secondStage = 1;
       }
     } while (secondStage == 1);
+
+    byte thirdStage;
+    do {
+      System.out.println("""
+          Entre com o número correspondente à opção desejada:
+          1 - Votar
+          2 - Resultado Parcial
+          3 - Finalizar Votação""");
+      thirdStage = Byte.parseByte(scanner.nextLine());
+
+      if (thirdStage == 1) {
+        Principal.vote(votingManagement, scanner);
+      } else if (thirdStage == 2 || thirdStage == 3) {
+        votingManagement.mostrarResultado();
+      }
+    } while (thirdStage == 1 || thirdStage == 2);
 
     scanner.close();
   }
@@ -82,4 +97,16 @@ public class Principal {
     votingManagement.cadastrarPessoaEleitora(voterName, voterCpf);
   }
 
+  /**
+   * Vote.
+   */
+  public static void vote(GerenciamentoVotacao votingManagement, Scanner scanner) {
+    System.out.println("Entre com o cpf da pessoa eleitora:");
+    String voterCpf = scanner.nextLine();
+
+    System.out.println("Entre com o número da pessoa candidata:");
+    int candidateNumber = Integer.parseInt(scanner.nextLine());
+
+    votingManagement.votar(voterCpf, candidateNumber);
+  }
 }

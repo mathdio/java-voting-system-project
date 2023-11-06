@@ -71,10 +71,10 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       String stringResult = "";
 
       for (PessoaCandidata pessoaCandidata : this.pessoasCandidatas) {
-        int percentage = pessoaCandidata.getVotos() / this.cpfsComputados.size() * 100;
+        double percentage = (double) pessoaCandidata.getVotos() / this.cpfsComputados.size() * 100;
         stringResult +=
             "Nome: " + pessoaCandidata.getNome() + " - " + pessoaCandidata.getVotos() + " votos ( "
-                + Math.round(percentage) + "% )";
+                + Math.round(percentage) + "% )\n";
       }
 
       stringResult += "Total de votos: " + this.cpfsComputados.size();
