@@ -2,7 +2,7 @@
 A voting system application developed as a [Trybe](https://www.betrybe.com) Project.
 
 ## 💻 About this project
-This application is a Java built-in voting system applying Object-Oriented Programming principles.
+This application is a Java built-in voting system applying Object-Oriented Programming principles. The system simulate a election management, allowing the users to: register candidates, register voters and carry out the voting process.
 
 ## 🛠️ Built with
 <a href="https://www.java.com/en/download/help/whatis_java.html" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /></a>
