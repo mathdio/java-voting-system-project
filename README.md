@@ -1,6 +1,8 @@
 # 🗳️ Voting System Project
+A voting system application developed as a [Trybe](https://www.betrybe.com) Project.
 
 ## 💻 About this project
+This application is a Java built-in voting system applying Object-Oriented Programming principles.
 
 ## 🛠️ Built with
 <a href="https://www.java.com/en/download/help/whatis_java.html" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /></a>
