@@ -1,4 +1,12 @@
+# 🗳️ Voting System Project
+
+## 💻 About this project
+
+## 🛠️ Built with
+<a href="https://www.java.com/en/download/help/whatis_java.html" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /></a>
+
 ## 🎯 Used skills
+- Java Object-Oriented Programming
 
 ## 🏁 Getting started
 ### ♨️ Installing Java
